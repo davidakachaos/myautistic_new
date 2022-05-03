@@ -1,0 +1,30 @@
+{%- assign largest = resized | sort: 'width' | last -%}
+{%- assign tinyest = resized | sort: 'width' | first -%}
+{%- capture srcset -%}
+{%- for i in resized -%}
+	{%- if forloop.last == false -%}
+    /{{ i.path }} {{ i.width }}w,
+	{%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+{%- if class == "logo" -%}
+<picture>
+	<source type="image/webp" srcset="/{{ original.path | replace: 'png', 'webp' }}">
+	<source type="image/png" srcset="/{{ original.path }}">
+	<img src="/{{ original.path }}"
+	srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w"
+	class="lazyload {{ class }}" alt="{{ alt }}"
+	title="{{ title }}" />
+</picture>
+{%- else -%}
+{%- if url -%}
+<a href="{{url}}">
+{%- endif -%}
+<figure class="{{ class }}">
+	<img src="/{{ largest.path }}" alt="{{ alt }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
+	<figcaption>{{ title }}</figcaption>
+</figure>
+{%- if url -%}
+</a>
+{%- endif -%}
+{%- endif -%}

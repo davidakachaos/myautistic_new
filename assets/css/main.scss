@@ -1,0 +1,476 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+// Old IMG stuff
+$background-color_1: transparent;
+
+.ui.image {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	background-color: $background-color_1;
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+	svg {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}
+img.ui.image {
+	display: block;
+}
+.ui.hidden.image {
+	display: none;
+}
+.ui.hidden.images {
+	display: none;
+}
+.ui.hidden.transition.image {
+	display: block;
+	visibility: hidden;
+}
+.ui.hidden.transition.images {
+	display: block;
+	visibility: hidden;
+}
+.ui.disabled.image {
+	cursor: default;
+	opacity: 0.45;
+}
+.ui.disabled.images {
+	cursor: default;
+	opacity: 0.45;
+}
+.ui.inline.image {
+	display: inline-block;
+	img {
+		display: inline-block;
+	}
+	svg {
+		display: inline-block;
+	}
+}
+.ui.top.aligned.image {
+	display: inline-block;
+	vertical-align: top;
+	img {
+		display: inline-block;
+		vertical-align: top;
+	}
+	svg {
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+.ui.top.aligned.images {
+	.image {
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+.ui.middle.aligned.image {
+	display: inline-block;
+	vertical-align: middle;
+	img {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	svg {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+.ui.middle.aligned.images {
+	.image {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+.ui.bottom.aligned.image {
+	display: inline-block;
+	vertical-align: bottom;
+	img {
+		display: inline-block;
+		vertical-align: bottom;
+	}
+	svg {
+		display: inline-block;
+		vertical-align: bottom;
+	}
+}
+.ui.bottom.aligned.images {
+	.image {
+		display: inline-block;
+		vertical-align: bottom;
+	}
+}
+.ui.rounded.image {
+	border-radius: 0.3125em;
+	>* {
+		border-radius: 0.3125em;
+	}
+}
+.ui.rounded.images {
+	.image {
+		border-radius: 0.3125em;
+		>* {
+			border-radius: 0.3125em;
+		}
+	}
+}
+.ui.bordered.image {
+	img {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	svg {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+	}
+}
+.ui.bordered.images {
+	.image {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	img {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	svg {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+	}
+}
+img.ui.bordered.image {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ui.circular.image {
+	overflow: hidden;
+	border-radius: 500rem;
+	>* {
+		border-radius: 500rem;
+	}
+}
+.ui.circular.images {
+	overflow: hidden;
+	.image {
+		border-radius: 500rem;
+		>* {
+			border-radius: 500rem;
+		}
+	}
+}
+.ui.fluid.image {
+	display: block;
+	width: 100%;
+	height: auto;
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+.ui.fluid.images {
+	display: block;
+	width: 100%;
+	height: auto;
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+.ui.avatar.image {
+	margin-right: 0.25em;
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	border-radius: 500rem;
+	img {
+		margin-right: 0.25em;
+		display: inline-block;
+		width: 2em;
+		height: 2em;
+		border-radius: 500rem;
+	}
+	svg {
+		margin-right: 0.25em;
+		display: inline-block;
+		width: 2em;
+		height: 2em;
+		border-radius: 500rem;
+	}
+}
+.ui.avatar.images {
+	.image {
+		margin-right: 0.25em;
+		display: inline-block;
+		width: 2em;
+		height: 2em;
+		border-radius: 500rem;
+	}
+	img {
+		margin-right: 0.25em;
+		display: inline-block;
+		width: 2em;
+		height: 2em;
+		border-radius: 500rem;
+	}
+	svg {
+		margin-right: 0.25em;
+		display: inline-block;
+		width: 2em;
+		height: 2em;
+		border-radius: 500rem;
+	}
+}
+.ui.spaced.image {
+	display: inline-block !important;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+.ui.floated.image {
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+.ui.floated.images {
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+.ui.right.floated.image {
+	float: right;
+	margin-right: 0;
+	margin-bottom: 1em;
+	margin-left: 1em;
+}
+.ui.right.floated.images {
+	float: right;
+	margin-right: 0;
+	margin-bottom: 1em;
+	margin-left: 1em;
+}
+.ui.centered.image {
+	margin-left: auto;
+	margin-right: auto;
+}
+.ui.centered.images {
+	margin-left: auto;
+	margin-right: auto;
+}
+.ui.mini.image {
+	width: 35px;
+	height: auto;
+	font-size: 0.78571429rem;
+}
+.ui.mini.images {
+	.image {
+		width: 35px;
+		height: auto;
+		font-size: 0.78571429rem;
+	}
+	img {
+		width: 35px;
+		height: auto;
+		font-size: 0.78571429rem;
+	}
+	svg {
+		width: 35px;
+		height: auto;
+		font-size: 0.78571429rem;
+	}
+}
+.ui.tiny.image {
+	width: 80px;
+	height: auto;
+	font-size: 0.85714286rem;
+}
+.ui.tiny.images {
+	.image {
+		width: 80px;
+		height: auto;
+		font-size: 0.85714286rem;
+	}
+	img {
+		width: 80px;
+		height: auto;
+		font-size: 0.85714286rem;
+	}
+	svg {
+		width: 80px;
+		height: auto;
+		font-size: 0.85714286rem;
+	}
+}
+.ui.small.image {
+	width: 150px;
+	height: auto;
+	font-size: 0.92857143rem;
+}
+.ui.small.images {
+	.image {
+		width: 150px;
+		height: auto;
+		font-size: 0.92857143rem;
+	}
+	img {
+		width: 150px;
+		height: auto;
+		font-size: 0.92857143rem;
+	}
+	svg {
+		width: 150px;
+		height: auto;
+		font-size: 0.92857143rem;
+	}
+}
+.ui.medium.image {
+	width: 300px;
+	height: auto;
+	font-size: 1rem;
+}
+.ui.medium.images {
+	.image {
+		width: 300px;
+		height: auto;
+		font-size: 1rem;
+	}
+	img {
+		width: 300px;
+		height: auto;
+		font-size: 1rem;
+	}
+	svg {
+		width: 300px;
+		height: auto;
+		font-size: 1rem;
+	}
+}
+.ui.large.image {
+	width: 450px;
+	height: auto;
+	font-size: 1.14285714rem;
+}
+.ui.large.images {
+	.image {
+		width: 450px;
+		height: auto;
+		font-size: 1.14285714rem;
+	}
+	img {
+		width: 450px;
+		height: auto;
+		font-size: 1.14285714rem;
+	}
+	svg {
+		width: 450px;
+		height: auto;
+		font-size: 1.14285714rem;
+	}
+}
+.ui.big.image {
+	width: 600px;
+	height: auto;
+	font-size: 1.28571429rem;
+}
+.ui.big.images {
+	.image {
+		width: 600px;
+		height: auto;
+		font-size: 1.28571429rem;
+	}
+	img {
+		width: 600px;
+		height: auto;
+		font-size: 1.28571429rem;
+	}
+	svg {
+		width: 600px;
+		height: auto;
+		font-size: 1.28571429rem;
+	}
+}
+.ui.huge.image {
+	width: 800px;
+	height: auto;
+	font-size: 1.42857143rem;
+}
+.ui.huge.images {
+	.image {
+		width: 800px;
+		height: auto;
+		font-size: 1.42857143rem;
+	}
+	img {
+		width: 800px;
+		height: auto;
+		font-size: 1.42857143rem;
+	}
+	svg {
+		width: 800px;
+		height: auto;
+		font-size: 1.42857143rem;
+	}
+}
+.ui.massive.image {
+	width: 960px;
+	height: auto;
+	font-size: 1.71428571rem;
+}
+.ui.massive.images {
+	.image {
+		width: 960px;
+		height: auto;
+		font-size: 1.71428571rem;
+	}
+	img {
+		width: 960px;
+		height: auto;
+		font-size: 1.71428571rem;
+	}
+	svg {
+		width: 960px;
+		height: auto;
+		font-size: 1.71428571rem;
+	}
+}
+.ui.images {
+	font-size: 0;
+	margin: 0 -0.25rem 0;
+	.image {
+		display: inline-block;
+		margin: 0 0.25rem 0.5rem;
+	}
+	img {
+		display: inline-block;
+		margin: 0 0.25rem 0.5rem;
+	}
+	svg {
+		display: inline-block;
+		margin: 0 0.25rem 0.5rem;
+	}
+}

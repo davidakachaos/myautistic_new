@@ -1,0 +1,15 @@
+
+{% assign document = post | default: page %}
+<!-- Languages post {{ document.ref }}-->
+{%- assign posts=site.posts | where:"ref", document.ref | sort: 'lang' -%}
+{%- for post in posts -%}
+{%- if post.url contains "amp" -%}{%- continue -%}{%- endif -%}
+<!-- {{ post.url }} -->
+<link rel="alternate" hreflang="{{ post.lang }}" href="{{ post.url }}" />
+{%- endfor -%} 
+<!-- Languages pages-->
+{%- assign pages=site.pages | where:"ref", document.ref | sort:
+'lang' -%}{%- for page in pages -%}{%- if page.url contains "amp" -%}{%- continue -%}{%- endif -%}
+<link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url }}" />
+{%- endfor -%}
+<!-- /Languages -->
