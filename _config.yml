@@ -59,7 +59,7 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
-search                   : # true, false (default)
+search                   : true # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
 algolia:
@@ -169,6 +169,7 @@ exclude:
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
+  - js/JekyllWebmentionIO.js
   - Capfile
   - CHANGELOG
   - config
@@ -219,7 +220,8 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+#permalink: /:categories/:title/
+permalink: /:year/:month/:title.html
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -322,6 +324,9 @@ responsive_image:
 
 # Webmentions
 webmentions:
+  js:
+    deploy: false
+    uglify: false
   username: myautisticself.nl
   legacy_domains: # Some might link to the HTTP version (will be redirected to HTTPS)
     - http://myautisticself.nl
@@ -340,3 +345,17 @@ webmentions:
       - "^https://brid.gy/publish/"
     blacklist:
       - "^https://foo.bar/"
+  throttle_lookups:
+    last_week: daily
+    last_month: weekly
+    last_year: every 2 weeks
+    older: monthly
+  templates:
+    bookmarks: _includes/webmentions/bookmarks.html
+    count: _includes/webmentions/count.html
+    likes: _includes/webmentions/likes.html
+    links: _includes/webmentions/links.html
+    posts: _includes/webmentions/posts.html
+    replies: _includes/webmentions/replies.html
+    reposts: _includes/webmentions/reposts.html
+    webmentions: _includes/webmentions/webmentions.html

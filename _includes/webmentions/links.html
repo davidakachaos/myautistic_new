@@ -1,0 +1,26 @@
+<div class="webmentions webmentions--links">
+  {% if webmentions.size > 0 %}
+    <ol class="webmentions__list">
+      {% for webmention in webmentions %}
+        <li id="webmention-{{ webmention.id }}" class="webmentions__item webmention webmention--{{ webmention.type }}">
+          <div class="webmention__content p-content">
+            Postback from <a class="webmention__source u-url" href="{{ webmention.url }}" rel="nofollow">{{ webmention.url }}</a>
+          </div>
+          <div class="webmention__meta">
+            {% if webmention.author %}
+              <a class="webmention__author h-card u-url" href="{{ webmention.author.url }}" rel="nofollow">{{ webmention.author.name }}</a>
+            {% endif %}
+            {% if webmention.verified_date and webmention.url %}on{% endif %}
+            {% if webmention.verified_date %}
+              <a class="webmention__source u-url" href="{{ webmention.url }}" rel="nofollow">
+                <time class="webmention__pubdate dt-published" datetime="{{ webmention.verified_date | date: '%FT%T%:z' }}">{{ webmention.verified_date | date: '%d %B %Y' }}</time>
+              </a>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p class="webmentions__not-found">No links were found.</p>
+  {% endif %}
+</div>

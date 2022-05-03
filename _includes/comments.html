@@ -157,5 +157,6 @@
       {% include /comments-providers/custom.html %}
   {% endcase %}
   <!-- Webmentions -->
-  {% webmentions page.url %}
+  {% webmention_likes page.url %}
+  {% webmention_replies page.url %}
 </div>

@@ -1,0 +1,42 @@
+<div class="webmentions webmentions--replies">
+  {% if webmentions.size > 0 %}
+  <h4 class="page__comments-title">Web Comments</h4>
+    <div class="webmentions__list">
+      {% for webmention in webmentions %}
+        <article id="webmention-{{ webmention.id }}" class="js-comment comment" itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+          <div class="comment__avatar-wrapper">
+          {% if webmention.author.photo %}
+            <img class="comment__avatar" src="{{ webmention.author.photo }}" alt="" title="{{ webmention.author.name }}">
+          {% endif %}
+        </div>
+        <div class="comment__content-wrapper">
+          <h3 class="comment__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            {% if webmention.url %}
+              <span itemprop="name"><a rel="external nofollow" itemprop="url" href="{{ webmention.url }}">{{ webmention.author.name }}</a></span>
+            {% else %}
+              <span itemprop="name">{{ webmention.author.name }}</span>
+            {% endif %}
+          </h3>
+          <p class="comment__date">
+            {% if webmention.pubdate %}
+              <time datetime="{{ webmention.pubdate | date_to_xmlschema }}" itemprop="datePublished">{{ webmention.pubdate | date: "%B %-d, %Y at %I:%M %p" }}</time>
+            {% else if webmention.raw.verified_date %}
+            <time datetime="{{ webmention.raw.verified_date | date_to_xmlschema }}" itemprop="datePublished">{{ webmention.raw.verified_date | date: "%B %-d, %Y at %I:%M %p" }}</time>
+            {% endif %}
+          </p>
+          <div itemprop="text">
+            {% if webmention.type == 'link'%}
+              Postback from <a class="webmention__source u-url" href="{{ webmention.raw.source }}" rel="nofollow">{{ webmention.raw.source }}</a>
+              {% endif %}
+              {% if webmention.content %}
+                {{ webmention.content }}
+              {% else %}
+                {{ webmention.title }}
+              {% endif %}
+          </div>
+        </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

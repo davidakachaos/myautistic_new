@@ -2,16 +2,16 @@
 main:
   en:
     - title: "About"
-      url: /en/about/
+      url: /en/about.html
     - title: "Contact"
-      url: /get-in-touch/
+      url: /get-in-touch.html
   nl:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
     - title: "Over"
-      url: /over/
+      url: /over.html
     - title: "Contact"
-      url: /contact/
+      url: /contact.html
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
