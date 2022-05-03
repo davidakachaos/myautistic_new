@@ -1,9 +1,0 @@
-<!-- start custom footer snippets -->
-<!-- start webpushr code --> <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BJWqtWlhrgE0oo82DLqan6e_OL69JrUo1E0yB-Syw-Sj-bC9UaRwTg3lUe9spBW8wE4z6CLj9lxa6fIaFFFLpM8' });</script><!-- end webpushr code -->
-<p>
-  <!-- jekyll-polyglot will process ferh= into href= through the static_href liquid block tag without relativizing the url; useful for making language navigation switchers  -->
-  {% for tongue in site.languages %}
-<a {% if tongue == site.active_lang %}style="font-weight: bold;"{% endif %} href="{% if tongue == site.default_lang %}{{page.url}}{% else %}/{{ tongue }}{{page.url}}{% endif %}">{{ tongue }}</a> |
-  {% endfor %}
-</p>
-<!-- end custom footer snippets -->
